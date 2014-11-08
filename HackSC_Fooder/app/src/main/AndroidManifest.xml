@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.HackS.Fall2014.hacksc_fooder.RegisterActivity"
+            android:label="RegisterActivity"
+            android:parentActivityName="com.HackS.Fall2014.hacksc_fooder.LogInActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.HackS.Fall2014.hacksc_fooder.LogInActivity" />
+        </activity>
     </application>
 
 </manifest>
