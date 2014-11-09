@@ -67,7 +67,7 @@ public class LogInActivity extends Activity {
         if(!user.containsKey(username)){
             Toast.makeText(getApplicationContext(),"username does not exist!", Toast.LENGTH_LONG).show();
             return;
-        }else if(!user.get(username).checkPassword(pw)){
+        }else if(!(user.get(username).checkPassword(pw))){
             Toast.makeText(getApplicationContext(), "password does not match your username!",Toast.LENGTH_LONG).show();
             return;
         }

@@ -14,4 +14,5 @@ class Restaurant {
 	String address;
 	String zipCode;
 	String country;
+    String mapUrl;
 }

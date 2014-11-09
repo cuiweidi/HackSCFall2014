@@ -19,7 +19,7 @@ public class User {
         password=pw;
     }
     protected boolean checkPassword(String pw){
-        if(password==pw)
+        if(password!=null&&password.equals(pw))
             return true;
         else
             return false;

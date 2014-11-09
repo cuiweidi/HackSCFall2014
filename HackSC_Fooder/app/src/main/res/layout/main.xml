@@ -28,7 +28,6 @@
         android:layout_width="match_parent"
         android:layout_height="280dp"
         android:id="@+id/imageView3"
-        android:src="@drawable/res1"
         android:scaleType="fitXY" />
 
     <FrameLayout
@@ -70,7 +69,8 @@
             android:layout_gravity="right|top"
             android:scaleType="fitXY"
             android:src="@drawable/nooooper"
-            android:background="#ffffff"/>
+            android:background="#ffffff"
+            android:onClick="dislikeClicked" />
 
         <ImageButton
             android:layout_width="104dp"
@@ -79,7 +79,8 @@
             android:layout_gravity="left|top"
             android:src="@drawable/liiiiike"
             android:scaleType="fitXY"
-            android:background="#ffffff"/>
+            android:background="#ffffff"
+            android:onClick="likeClicked" />
 
     </FrameLayout>
 </LinearLayout>
