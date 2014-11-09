@@ -1,4 +1,4 @@
-package hackSC;
+package com.HackS.Fall2014.hacksc_fooder;
 
 import org.scribe.builder.api.DefaultApi10a;
 import org.scribe.model.Token;

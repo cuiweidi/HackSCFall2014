@@ -1,4 +1,6 @@
-package hackSC;
+package com.HackS.Fall2014.hacksc_fooder;
+
+import com.HackS.Fall2014.hacksc_fooder.Restaurant;
 
 import java.util.ArrayList;
 
@@ -11,19 +13,6 @@ import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import org.scribe.oauth.OAuthService;
 
-//Read current city by Androids native API and pass them into a fixed string into constructor
-class Restaurant {
-	String id;
-	String displayPhone;
-	double rating;
-	String url;
-	double phone;
-	String imageUrl;
-	String cityState;
-	String address;
-	String zipCode;
-	String country;
-}
 public class YelpAPI {
 	
   private static final String API_HOST = "api.yelp.com";
