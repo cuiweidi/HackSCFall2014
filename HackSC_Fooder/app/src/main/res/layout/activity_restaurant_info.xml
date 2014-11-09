@@ -1,0 +1,115 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context=".RestaurantInfo" tools:ignore="MergeRootFrame"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="152dp"
+        android:id="@+id/layout1"
+        android:background="#ffdde8e5">
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Restaurant Name"
+            android:id="@+id/name"
+            android:layout_gravity="center_horizontal" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:id="@+id/s2" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/layout1_1">
+
+            <Space
+                android:layout_width="100px"
+                android:layout_height="20px"
+                android:id="@+id/s1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/layout1_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Address: 3575 Wilshire Blvd,"
+                    android:id="@+id/address1"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Los Angeles, CA 90010"
+                    android:id="@+id/address2"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Phone: (213) 382-6677"
+                    android:id="@+id/phone"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Price: $$$$"
+                    android:id="@+id/price"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Hours: Open today, Open 24 hours"
+                    android:id="@+id/hours"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4" />
+
+    </LinearLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="165dp"
+        android:layout_height="154dp"
+        android:text="Map It"
+        android:id="@+id/mapIt"
+        android:layout_gravity="center"
+        android:onClick="mapClicked" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="99dp"
+        android:layout_height="123dp"
+        android:text="return"
+        android:id="@+id/returning"
+        android:layout_gravity="center_horizontal|bottom"
+        android:onClick="returnClicked" />
+
+</FrameLayout>
