@@ -24,6 +24,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.HackS.Fall2014.hacksc_fooder.LogInActivity" />
         </activity>
+        <activity
+            android:name="com.HackS.Fall2014.hacksc_fooder.main"
+            android:label="main">
+        </activity>
+        <activity android:name="com.HackS.Fall2014.hacksc_fooder.RestaurantInfo"
+            android:label="RestaurantInfo"
+            android:parentActivityName=".main">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.HackS.Fall2014.hacksc_fooder.main"/>
+        </activity>
     </application>
 
 </manifest>

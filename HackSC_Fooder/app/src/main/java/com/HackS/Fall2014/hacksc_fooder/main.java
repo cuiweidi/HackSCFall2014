@@ -1,4 +1,4 @@
-package tutorial.com.hackschools.fooder_19;
+package com.HackS.Fall2014.hacksc_fooder;
 
 
 import android.app.Activity;

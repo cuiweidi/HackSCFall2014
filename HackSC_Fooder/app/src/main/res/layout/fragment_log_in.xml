@@ -58,7 +58,8 @@
             android:text="SIGN IN"
             android:id="@+id/sign_in_button"
             android:background="#FF7777"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:onClick="signIn" />
 
         <Button
             android:layout_width="match_parent"

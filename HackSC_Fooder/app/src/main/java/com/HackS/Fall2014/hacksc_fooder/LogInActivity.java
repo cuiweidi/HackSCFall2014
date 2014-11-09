@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -24,8 +25,8 @@ import java.util.Scanner;
 
 
 public class LogInActivity extends Activity {
-    public static HashMap<String, User> user;
-
+    protected static HashMap<String, User> user;
+    protected static User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class LogInActivity extends Activity {
                     .commit();
         }
         user=new HashMap<String, User>();
+        currentUser=null;
         try
         {
             File fl=new File(this.getApplicationContext().getFilesDir().getPath()+"/user.txt");
@@ -59,7 +61,19 @@ public class LogInActivity extends Activity {
         }
     }
 
-
+    public void signIn(View view){
+        String username=((EditText)this.findViewById(R.id.text_email)).getText().toString();
+        String pw=((EditText)this.findViewById(R.id.text_password)).getText().toString();
+        if(!user.containsKey(username)){
+            Toast.makeText(getApplicationContext(),"username does not exist!", Toast.LENGTH_LONG).show();
+            return;
+        }else if(!user.get(username).checkPassword(pw)){
+            Toast.makeText(getApplicationContext(), "password does not match your username!",Toast.LENGTH_LONG).show();
+            return;
+        }
+        Intent intent=new Intent(this, main.class);
+        this.startActivity(intent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
