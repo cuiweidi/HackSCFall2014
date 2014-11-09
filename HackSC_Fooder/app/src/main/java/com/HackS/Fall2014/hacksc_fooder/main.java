@@ -47,7 +47,7 @@ public class main extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        Initial("ramen"," Los Angeles, CA");
+        Initial("chinese"," Los Angeles, CA");
         try{
             Thread.sleep(1000);
         }catch(InterruptedException ie){
@@ -88,12 +88,11 @@ public class main extends Activity {
     }
     public void Initial(String kind, String location){
         index=0;
-        ExecutorService exe= Executors.newFixedThreadPool(1);
         yelpAPI=new YelpAPI(kind,location,50);
         yelpAPI.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         list=yelpAPI.getArrayList();
         if(list==null)
-            System.out.println("Hello6");
+            System.out.println(list.size());
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -117,7 +116,7 @@ public class main extends Activity {
     }
     public void dislikeClicked(View view){
         if(index==list.size())
-            Initial("ramen","Los Angeles, CA");
+            Initial("chinese","Los Angeles, CA");
         try {
             //System.out.println(list.size());
             new ImageDownloader(iv).execute(list.get(index).imageUrl);

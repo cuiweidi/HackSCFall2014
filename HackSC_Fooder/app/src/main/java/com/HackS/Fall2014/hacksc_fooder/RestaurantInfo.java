@@ -33,8 +33,6 @@ public class RestaurantInfo extends Activity {
         ImageView iv=(ImageView)this.findViewById(R.id.imageView5);
         try {
             new ImageDownloader(iv).execute(main.current.mapUrl);
-            iv.setScaleX(2);
-            iv.setScaleY(2);
         }  catch (Exception e){
             System.out.println(e.getMessage());
         }
