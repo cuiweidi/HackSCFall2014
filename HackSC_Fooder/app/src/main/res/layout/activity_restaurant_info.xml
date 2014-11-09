@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Restaurant Name"
+
             android:id="@+id/name"
             android:layout_gravity="center_horizontal" />
 
@@ -49,7 +49,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Address: 3575 Wilshire Blvd,"
                     android:id="@+id/address1"
                     android:layout_gravity="center_horizontal" />
 
@@ -57,7 +56,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Los Angeles, CA 90010"
                     android:id="@+id/address2"
                     android:layout_gravity="center_horizontal" />
 
@@ -65,7 +63,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Phone: (213) 382-6677"
                     android:id="@+id/phone"
                     android:layout_gravity="center_horizontal" />
 
@@ -73,7 +70,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Price: $$$$"
                     android:id="@+id/price"
                     android:layout_gravity="center_horizontal" />
 
@@ -81,7 +77,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Hours: Open today, Open 24 hours"
                     android:id="@+id/hours"
                     android:layout_gravity="center_horizontal" />
             </LinearLayout>
@@ -96,20 +91,26 @@
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="165dp"
-        android:layout_height="154dp"
+        android:layout_width="wrap_content"
+        android:layout_height="83dp"
         android:text="Map It"
         android:id="@+id/mapIt"
-        android:layout_gravity="center"
-        android:onClick="mapClicked" />
+        android:layout_gravity="left|bottom"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="99dp"
-        android:layout_height="123dp"
+        android:layout_width="wrap_content"
+        android:layout_height="95dp"
         android:text="return"
         android:id="@+id/returning"
-        android:layout_gravity="center_horizontal|bottom"
+        android:layout_gravity="right|bottom"
         android:onClick="returnClicked" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/imageView5"
+        android:minHeight="200dp"
+        android:minWidth="200dp" />
 </FrameLayout>

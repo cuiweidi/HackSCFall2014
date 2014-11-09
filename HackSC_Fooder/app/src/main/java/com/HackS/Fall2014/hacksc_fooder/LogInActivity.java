@@ -71,6 +71,7 @@ public class LogInActivity extends Activity {
             Toast.makeText(getApplicationContext(), "password does not match your username!",Toast.LENGTH_LONG).show();
             return;
         }
+        Toast.makeText(getApplicationContext(),"Loading...",Toast.LENGTH_SHORT).show();
         Intent intent=new Intent(this, main.class);
         this.startActivity(intent);
     }

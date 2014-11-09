@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -33,16 +34,25 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class main extends Activity {
     protected int index;
+    protected YelpAPI yelpAPI;
     protected ArrayList<Restaurant> list;
     protected ImageView iv;
+    protected static Restaurant current;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         Initial("ramen"," Los Angeles, CA");
+        try{
+            Thread.sleep(1000);
+        }catch(InterruptedException ie){
+            System.out.println("IE: "+ie.getMessage());
+        }
         try {
             iv = (ImageView) this.findViewById(R.id.picture);
             System.out.println(list.size());
@@ -78,8 +88,11 @@ public class main extends Activity {
     }
     public void Initial(String kind, String location){
         index=0;
-        YelpAPI yelpAPI=new YelpAPI(kind,location,10);
-        list=yelpAPI.queryAPI(yelpAPI);
+        ExecutorService exe= Executors.newFixedThreadPool(1);
+        yelpAPI=new YelpAPI(kind,location,50);
+        yelpAPI.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        list=yelpAPI.getArrayList();
+        if(list==null)
             System.out.println("Hello6");
     }
     @Override
@@ -114,6 +127,7 @@ public class main extends Activity {
         }
     }
     public void likeClicked(View view){
+        current=list.get(index-1);
         Intent intent=new Intent(this,RestaurantInfo.class);
         this.startActivity(intent);
     }
